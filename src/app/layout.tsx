@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import LeftBar from "@/components/LeftBar/LeftBar";
+import RightBar from "@/components/RightBar/RightBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +26,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body>
+        <div className="flex justify-between max-w-screen-md lg:max-w-screen-lg mx-auto">
+          <div>
+            <LeftBar />
+          </div>
+          <div>{children}</div>
+          <div>
+            <RightBar />
+          </div>
+        </div>
       </body>
     </html>
   );
