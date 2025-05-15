@@ -1,6 +1,7 @@
-import { MENU_LIST } from "@/constants/data";
-import Image from "next/image";
 import Link from "next/link";
+
+import { MENU_LIST } from "@/constants/data";
+import { IoImage } from "../IoImage/IoImage";
 
 const LeftBar = () => {
   return (
@@ -9,7 +10,7 @@ const LeftBar = () => {
       <section className="flex flex-col gap-4 text-lg items-center xxl:items-start">
         {/* LOGO*/}
         <Link href="/" className="p-2 hover:bg-hoverMenuList">
-          <Image src="icons/logo.svg" alt="Logo" width={24} height={24} />
+          <IoImage src="icons/logo.svg" alt="Logo" w={24} h={24} />
         </Link>
         {/* Menu List */}
         <div className="flex flex-col gap-4">
@@ -19,12 +20,7 @@ const LeftBar = () => {
               href={m.link}
               key={m.id}
             >
-              <Image
-                src={`icons/${m.icon}`}
-                alt={m.name}
-                width={24}
-                height={24}
-              />
+              <IoImage src={`icons/${m.icon}`} alt={m.name} w={24} h={24} />
               <span className="hidden xxl:inline">{m.name}</span>
             </Link>
           ))}
@@ -34,7 +30,7 @@ const LeftBar = () => {
           href="/"
           className="bg-white text-black rounded-full font-bold size-12 flex items-center justify-center xxl:hidden"
         >
-          <Image src="icons/post.svg" alt="New Post" width={24} height={24} />
+          <IoImage src="icons/post.svg" alt="New Post" w={24} h={24} />
         </Link>
         <Link
           href="/"
@@ -47,7 +43,14 @@ const LeftBar = () => {
       <section className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="size-10 relative rounded-full overflow-hidden">
-            <Image src="/general/avatar.png" alt="Avatar" fill />
+            <IoImage
+              src="/general/avatar.png"
+              alt="Avatar"
+              w={100}
+              h={100}
+              tr={true}
+              fill
+            />
           </div>
           <div className="hidden xxl:flex flex-col">
             <span className="font-bold">User</span>

@@ -4,3 +4,13 @@ export type MenuList = {
   link: string;
   icon: string;
 }
+
+export type ImageProps = {
+  src: string;
+  w?: number;
+  h?: number;
+  alt?: string;
+  className?: string;
+  tr?: boolean;
+  fill?: boolean;
+}
